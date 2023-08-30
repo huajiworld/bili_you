@@ -59,7 +59,7 @@ jobs:
           
       # 发布安装包
       - name: upload Packages
-        uses: action/upload-artifact@v3
+        uses: actions/upload-artifact@v3
         with:
             path: app/outputs/flutter-apk/app-armeabi-v7a-release.apk
             
