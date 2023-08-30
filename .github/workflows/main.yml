@@ -39,7 +39,7 @@ jobs:
 
       - run: flutter pub get
       # 打包apk
-      - name: Collect Apks
+      - name: Build Apks
         run: flutter build apk --release --split-per-abi
         
 
@@ -58,8 +58,8 @@ jobs:
       # - run: appimage-builder --recipe AppImageBuilder.yml
           
       # 发布安装包
-      - name: Release Packages
-        uses: ncipollo/release-action@v1
+      - name: upload Packages
+        uses: action/upload-artifact@v3
         with:
-            artifacts: "build/app/outputs/flutter-apk/app-*.apk"
-            allowUpdates: true
+            path: app/outputs/flutter-apk/app-armeabi-v7a-release.apk
+            
